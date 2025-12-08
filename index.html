@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,18 @@
     <meta name="description" content="岩手県奥州市の株式会社菅原組の採用情報です。未経験歓迎、道路パトロール兼土木作業スタッフ募集。地域密着50年以上の安定企業で働きませんか？">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script>
+        var pass = prompt("パスワードを入力してください:");
+        if (pass !== "3756") {
+            document.body.innerHTML = "アクセスできません";
+        }
+    </script>
+
 </head>
+
 <body>
 
     <!-- 2. スティッキーヘッダー -->
@@ -61,11 +71,12 @@
                     「土木作業＝力仕事ばかり」と思っていませんか？<br>
                     菅原組の仕事は、地域の安全を見守る「パトロール」から始まります。
                 </p>
-                
+
                 <div class="card-grid">
                     <div class="card">
                         <div class="card__img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80" alt="道路パトロール" class="card__img">
+                            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80"
+                                alt="道路パトロール" class="card__img">
                         </div>
                         <div class="card__body">
                             <h4 class="card__title">道路パトロール</h4>
@@ -78,7 +89,8 @@
                     </div>
                     <div class="card">
                         <div class="card__img-wrapper">
-                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="土木・建築作業" class="card__img">
+                            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
+                                alt="土木・建築作業" class="card__img">
                         </div>
                         <div class="card__body">
                             <h4 class="card__title">土木・建築作業</h4>
@@ -97,7 +109,7 @@
         <section id="appeal" class="section">
             <div class="container">
                 <h3 class="section__title">菅原組で働くメリット<span class="section__subtitle">OUR MERITS</span></h3>
-                
+
                 <div class="merit-list">
                     <div class="merit">
                         <div class="merit__icon">💰</div>
@@ -223,7 +235,8 @@
                         </p>
                     </div>
                     <div class="company-intro__img">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80" alt="作業風景">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80"
+                            alt="作業風景">
                     </div>
                 </div>
             </div>
@@ -237,7 +250,8 @@
                     <div class="voice">
                         <div class="voice__head">
                             <div class="voice__img">
-                                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80" alt="先輩社員A">
+                                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80"
+                                    alt="先輩社員A">
                             </div>
                             <div class="voice__info">
                                 <p class="voice__name">入社3年目 / 30代</p>
@@ -251,7 +265,8 @@
                     <div class="voice">
                         <div class="voice__head">
                             <div class="voice__img">
-                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80" alt="先輩社員B">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80"
+                                    alt="先輩社員B">
                             </div>
                             <div class="voice__info">
                                 <p class="voice__name">入社15年目 / 50代</p>
@@ -391,5 +406,48 @@
         </a>
     </div>
 
+    <!-- トップに戻るボタン -->
+    <a href="#" id="backToTop" class="back-to-top" aria-label="トップに戻る">↑</a>
+
+    <script>
+        // トップに戻るボタンの表示制御
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('is-visible');
+            } else {
+                backToTopBtn.classList.remove('is-visible');
+            }
+        });
+
+        // スムーズスクロール（ページ内リンク用）
+        // CSSの scroll-behavior: smooth; で基本は対応していますが、
+        // Safariなどの一部ブラウザや、より細かい制御のためにJSでも補完
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerHeight = document.getElementById('header').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+
 </body>
+
 </html>
